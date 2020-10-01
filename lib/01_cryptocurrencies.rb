@@ -7,26 +7,28 @@ name_currencie = ["Bitcoin", "Ethereum", "XRP", "Bitcoin Cash", "EOS", "Litecoin
 
 My_hash = Hash[name_currencie.zip(values)]
 
-puts "____    __    ____  _______  __        ______   ______   .___  ___.  _______ 
+puts 
+"____    __    ____  _______  __        ______   ______   .___  ___.  _______ 
 \   \  /  \  /   / |   ____||  |      /      | /  __  \  |   \/   | |   ____|
  \   \/    \/   /  |  |__   |  |     |  ,----'|  |  |  | |  \  /  | |  |__   
   \            /   |   __|  |  |     |  |     |  |  |  | |  |\/|  | |   __|  
    \    /\    /    |  |____ |  `----.|  `----.|  `--'  | |  |  |  | |  |____ 
     \__/  \__/     |_______||_______| \______| \______/  |__|  |__| |_______|
                                                                              "
+                                                                             1
 puts "Bienvenue dans le super programme qui fera de toi la personne la plus riche au monde"
 puts "A toi le flouuuuuuuuuzz !!"
 puts""
-puts "Appui sur entrée pour devenir riche"
+puts "Appui sur Entrer pour devenir riche"
 print">"
 enter = gets.chomp
 
 def main_menu
   puts "Dis moi ce que tu veux savoir ?"
   puts "1 - La ou les crypto qui ont la plus grosse valeur
-  2 - La ou les crypto qui ont la plus petite valeur
-  3 - Les devises dont le cours est inférieur à 6000
-  4 - La devise la plus chère parmi celles dont le cours est inférieur à 6000."
+        2 - La ou les crypto qui ont la plus petite valeur
+        3 - Les devises dont le cours est inférieur à 6000
+        4 - La devise la plus chère parmi celles dont le cours est inférieur à 6000."
   puts""
   puts"q - quitter le programme et rester pauvre..."
   puts""
@@ -57,7 +59,8 @@ def answer_one
   puts "voici la crypto qui à la plus grosse valeur du moment"
   puts My_hash.max_by{|k,v| v}
   puts "Vas-y fonce ma/mon pote, c'est du cash garantie !"
-  puts "appuie sur entré pour revenir au menu et découvrir encore plus de choses !"
+  print " "
+  puts "appuie sur Entrer pour revenir au menu et découvrir encore plus de choses !"
   print ">"
   gets.chomp
   main_menu
@@ -67,27 +70,19 @@ def answer_two
   puts "voici la crypto qui à la plus basse valeur du moment"
   puts My_hash.min_by{|k,v| v}
   puts "C'est pas avec ça que tu vas devenir riche..."
-  puts "appuie sur entré pour revenir au menu et découvrir encore plus de choses !"
+  print " "
+  puts "appuie sur Entrer pour revenir au menu et découvrir encore plus de choses !"
   print ">"
   gets.chomp
   main_menu
 end
 
 def answer_three
-  puts my_hash.select {|k,v| v < 6000 }
+  puts My_hash.select {|k,v| v < 6000 }
   puts "voici les devises dont le cours est inférieur à 6000"
   puts "Si t'es pas trop pressé pour devenir riche, elles sont pour toi !"
-  puts "appuie sur entré pour revenir au menu et découvrir encore plus de choses !"
-  print ">"
-  gets.chomp
-  main_menu
-end
-
-def answer_three
-  puts my_hash.select {|k,v| v < 6000 }
-  puts "voici les devises dont le cours est inférieur à 6000"
-  puts "Si t'es pas trop pressé pour devenir riche, elles sont pour toi !"
-  puts "appuie sur entré pour revenir au menu et découvrir encore plus de choses !"
+  print " "
+  puts "appuie sur Entrer pour revenir au menu et découvrir encore plus de choses !"
   print ">"
   gets.chomp
   main_menu
@@ -95,10 +90,11 @@ end
 
 def answer_four
   a = My_hash.select {|k,v| v < 6000 } 
-  puts a.max_by{|k,v| v}
   puts "voici la devise la plus chère parmi celles dont le cours est inférieur à 6000"
+  puts a.max_by{|k,v| v}
   puts "Si t'es un peu trouillard/e, et que devenir seulement millionaire ça te vas, bah écoute vas-y hein le/la pauvre"
-  puts "appuie sur entré pour revenir au menu et découvrir encore plus de choses !"
+  print " "
+  puts "appuie sur Entrer pour revenir au menu et découvrir encore plus de choses !"
   print ">"
   gets.chomp
   main_menu
